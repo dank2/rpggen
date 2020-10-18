@@ -18,9 +18,9 @@ var (
 	binaryName = "rpggen"
 )
 
-func TestBooks(t *testing.T) {
+func TestNpcGeneration(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Rpggen Suite")
+	RunSpecs(t, "Rpggen Feature Suite")
 }
 
 var _ = Describe("Generate a npc", func() {
@@ -45,47 +45,47 @@ var _ = Describe("Generate a npc", func() {
 			Expect(generatedNpc.Name).ToNot(BeEmpty())
 		})
 
-		It("Then race should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Race).ToNot(BeEmpty())
-		})
+		// It("Then race should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Race).ToNot(BeEmpty())
+		// })
 
-		It("Then gender should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Gender).ToNot(BeEmpty())
-		})
+		// It("Then gender should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Gender).ToNot(BeEmpty())
+		// })
 
-		It("Then personality should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Personality).ToNot(BeEmpty())
-		})
+		// It("Then personality should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Personality).ToNot(BeEmpty())
+		// })
 
-		It("Then appearance should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Appearance).ToNot(BeEmpty())
-		})
+		// It("Then appearance should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Appearance).ToNot(BeEmpty())
+		// })
 
-		It("Then dream should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Dream).ToNot(BeEmpty())
-		})
+		// It("Then dream should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Dream).ToNot(BeEmpty())
+		// })
 
-		It("Then flaw should be set", func() {
-			var generatedNpc npc.Npc
-			err := json.Unmarshal(output, &generatedNpc)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(generatedNpc.Flaw).ToNot(BeEmpty())
-		})
+		// It("Then flaw should be set", func() {
+		// 	var generatedNpc npc.Npc
+		// 	err := json.Unmarshal(output, &generatedNpc)
+		// 	Expect(err).NotTo(HaveOccurred())
+		// 	Expect(generatedNpc.Flaw).ToNot(BeEmpty())
+		// })
 	})
 
 })

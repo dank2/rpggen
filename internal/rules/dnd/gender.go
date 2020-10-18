@@ -7,7 +7,7 @@ import (
 
 func GetGender() string {
 	rand.Seed(time.Now().UnixNano())
-	genderNumber := rand.Intn(1)
+	genderNumber := rand.Intn(2)
 
 	if genderNumber == 1 {
 		return "male"
