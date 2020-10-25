@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	dnd "github.com/dank2/rpggen/internal/rules/dnd"
+	data "github.com/dank2/rpggen/internal/dnd/npc/data"
 )
 
 // Npc is the Base type NPC
@@ -21,8 +21,8 @@ type Npc struct {
 // GenerateNpc is theMain func to generate an NPC
 func GenerateNpc() (*Npc, error) {
 
-	gender := dnd.GetGender()
-	name := dnd.GetName(gender)
+	gender := data.GetGender()
+	name := data.GetName(gender)
 
 	rand.Seed(time.Now().UnixNano())
 	return &Npc{

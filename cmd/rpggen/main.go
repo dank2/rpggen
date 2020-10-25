@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/dank2/rpggen/internal/npc"
+	"github.com/dank2/rpggen/internal/dnd/npc"
 )
 
 func main() {

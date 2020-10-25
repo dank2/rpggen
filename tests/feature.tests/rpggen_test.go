@@ -8,7 +8,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/dank2/rpggen/internal/npc"
+	"github.com/dank2/rpggen/internal/dnd/npc"
 
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"

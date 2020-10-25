@@ -1,4 +1,4 @@
-package dnd
+package data
 
 import (
 	"math/rand"
