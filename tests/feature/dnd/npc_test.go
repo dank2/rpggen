@@ -54,7 +54,7 @@ var _ = Describe("Generate a npc", func() {
 })
 
 func runRpgGen(wd string, args ...string) (string, error) {
-	binary := filepath.Join(wd, "rpggen.exe")
+	binary := filepath.Join(wd, "bin", "rpggen.exe")
 	cmd := exec.Command(binary, args...)
 	cmd.Dir = wd
 	var output bytes.Buffer

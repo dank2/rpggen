@@ -1,5 +1,5 @@
 test:
-	go test -v ./...
+	go test ./... --ginkgo.noColor
 
 build:
 	go build -o ./bin/rpggen.exe ./rpggen/main.go

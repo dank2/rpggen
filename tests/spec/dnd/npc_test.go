@@ -35,7 +35,7 @@ var _ = Describe("Dnd NPC spec tests", func() {
 		})
 
 		It("should have a race", func() {
-			Expect(npc.Race).To(BeElementOf(data.Races))
+			Expect(npc.Race).To(BeElementOf(data.Races.GetValues()))
 		})
 
 		It("should have an appearance", func() {
