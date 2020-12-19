@@ -16,7 +16,6 @@ var Bonds = []string{
 	"Protective of a sentimental keepsake",
 	"Protective of a valuable possession",
 	"Out for revenge",
-	"Roll twice, ignoring results of 10",
 }
 
 func GetBond() string {
@@ -25,7 +24,7 @@ func GetBond() string {
 
 	index := rand.Intn(length + 1)
 
-	if index == length+1 {
+	if index == length {
 		return fmt.Sprintf("%s, %s", Bonds[rand.Intn(length)], Bonds[rand.Intn(length)])
 	}
 
