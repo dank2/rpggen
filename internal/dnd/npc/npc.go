@@ -10,12 +10,12 @@ import (
 
 // Npc is the Base type NPC
 type Npc struct {
-	Name       string `json:name,omitempty`
-	Race       string `json:race,omitempty`
-	Mannerism  string `json:mannerism,omitempty`
-	Appearance string `json:appearance,omitempty`
-	Bond       string `json:bond,omitempty`
-	Flaw       string `json:flaw,omitempty`
+	Name       string `yaml:"Name,omitempty"`
+	Race       string `yaml:"Race,omitempty"`
+	Mannerism  string `yaml:"Mannerism,omitempty"`
+	Appearance string `yaml:"Appearance,omitempty"`
+	Bond       string `yaml:"Bond,omitempty"`
+	Flaw       string `yaml:"Flaw,omitempty"`
 }
 
 // GenerateNpc is theMain func to generate an NPC
