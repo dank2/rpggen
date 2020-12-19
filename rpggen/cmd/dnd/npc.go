@@ -20,7 +20,7 @@ func AddNpcCommand(out io.Writer) *cobra.Command {
 			}
 
 			if formatted, err := utils.PrettyFormat(npc); err == nil {
-				fmt.Fprintf(out, "Generated NPC:\n%s", formatted)
+				fmt.Fprintf(out, formatted)
 			} else if err != nil {
 				return fmt.Errorf("unable to generate npc: %s", err)
 			}
