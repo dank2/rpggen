@@ -3,7 +3,6 @@ package data
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 var Bonds = []string{
@@ -19,11 +18,8 @@ var Bonds = []string{
 }
 
 func GetBond() string {
-	rand.Seed(time.Now().UnixNano())
 	length := len(Bonds)
-
-	index := rand.Intn(length + 1)
-
+	index := random.Intn(length + 1)
 	if index == length {
 		return fmt.Sprintf("%s, %s", Bonds[rand.Intn(length)], Bonds[rand.Intn(length)])
 	}

@@ -1,9 +1,7 @@
 package data
 
 import (
-	"math/rand"
 	"sort"
-	"time"
 )
 
 type RacesType []RaceDist
@@ -24,12 +22,10 @@ type RaceDist struct {
 	Distribution float32
 }
 
-var r *rand.Rand
-
 func GetRace() string {
 	Races.Sort()
 
-	pointer := r.Float32()
+	pointer := random.Float32()
 	var sum float32
 	for _, v := range Races {
 		sum += v.Distribution
@@ -53,9 +49,4 @@ func (r RacesType) Sort() {
 	sort.SliceStable(r, func(i, j int) bool {
 		return r[i].Distribution > r[j].Distribution
 	})
-}
-
-func init() {
-	source := rand.NewSource(time.Now().UnixNano())
-	r = rand.New(source)
 }

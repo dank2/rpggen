@@ -1,10 +1,5 @@
 package data
 
-import (
-	"math/rand"
-	"time"
-)
-
 var norseNamesMale = []string{
 	"Agni",
 	"Alaric",
@@ -33,14 +28,12 @@ var norseNamesFemale = []string{
 
 // GetName returns a name from the table based on index
 func GetName(gender string) string {
-	rand.Seed(time.Now().UnixNano())
-
 	var listToUse []string
-	if gender == "male" {
+	if gender == "Male" {
 		listToUse = norseNamesMale
 	} else {
 		listToUse = norseNamesFemale
 	}
 
-	return listToUse[rand.Intn(len(listToUse))]
+	return listToUse[random.Intn(len(listToUse))]
 }

@@ -1,10 +1,5 @@
 package data
 
-import (
-	"math/rand"
-	"time"
-)
-
 var Appearances = []string{
 	"Distinctive jewelry: earrings, necklace, circlet, bracelets",
 	"Piercings",
@@ -29,6 +24,5 @@ var Appearances = []string{
 }
 
 func GetAppearance() string {
-	rand.Seed(time.Now().UnixNano())
-	return Appearances[rand.Intn(len(Appearances))]
+	return Appearances[random.Intn(len(Appearances))]
 }

@@ -1,10 +1,5 @@
 package data
 
-import (
-	"math/rand"
-	"time"
-)
-
 var Mannerism = []string{
 	"Prone to singing, whistling, or humming quietly",
 	"Speaks in rhyme or some other peculiar way",
@@ -29,6 +24,5 @@ var Mannerism = []string{
 }
 
 func GetMannerism() string {
-	rand.Seed(time.Now().UnixNano())
-	return Mannerism[rand.Intn(len(Mannerism))]
+	return Mannerism[random.Intn(len(Mannerism))]
 }

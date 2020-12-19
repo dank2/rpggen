@@ -1,10 +1,5 @@
 package data
 
-import (
-	"math/rand"
-	"time"
-)
-
 var Flaws = []string{
 	"Forbidden love or susceptibility to romance",
 	"Enjoys decadent pleasures",
@@ -21,6 +16,5 @@ var Flaws = []string{
 }
 
 func GetFlaw() string {
-	rand.Seed(time.Now().UnixNano())
-	return Flaws[rand.Intn(len(Flaws))]
+	return Flaws[random.Intn(len(Flaws))]
 }
