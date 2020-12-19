@@ -10,8 +10,8 @@ func GetGender() string {
 	genderNumber := rand.Intn(2)
 
 	if genderNumber == 1 {
-		return "male"
+		return "Male"
 	} else {
-		return "female"
+		return "Female"
 	}
 }

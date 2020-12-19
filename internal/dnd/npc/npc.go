@@ -1,6 +1,7 @@
 package npc
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 
@@ -11,7 +12,6 @@ import (
 type Npc struct {
 	Name       string `json:name,omitempty`
 	Race       string `json:race,omitempty`
-	Gender     string `json:gender,omitempty`
 	Mannerism  string `json:mannerism,omitempty`
 	Appearance string `json:appearance,omitempty`
 	Bond       string `json:bond,omitempty`
@@ -32,9 +32,8 @@ func GenerateNpc() (*Npc, error) {
 	rand.Seed(time.Now().UnixNano())
 	return &Npc{
 		Name:       name,
-		Gender:     gender,
 		Race:       race,
-		Appearance: appearance,
+		Appearance: fmt.Sprintf("%s, %s", gender, appearance),
 		Mannerism:  mannerism,
 		Bond:       bond,
 		Flaw:       flaw,

@@ -2,6 +2,7 @@ package dnd
 
 import (
 	"bytes"
+	"strings"
 	"testing"
 
 	"github.com/dank2/rpggen/internal/dnd/npc"
@@ -33,22 +34,19 @@ var _ = Describe("Dnd NPC spec tests", func() {
 			Expect(err).ToNot(HaveOccurred())
 		})
 
-		It("should have a gender", func() {
-			Expect(npc.Gender).To(BeElementOf([]string{"male", "female"}))
-		})
-
 		It("should have a race", func() {
-			Expect(npc.Race).To(BeElementOf(getValues(data.Races)))
+			Expect(npc.Race).To(BeElementOf(data.Races))
 		})
 
 		It("should have an appearance", func() {
-			appearances := getValues(data.Appearances)
-			Expect(npc.Appearance).To(BeElementOf(appearances))
+			split := strings.Split(npc.Appearance, ", ")
+			Expect(len(split)).To(BeNumerically(">=", 2))
+			Expect(split[0]).To(BeElementOf([]string{"Male", "Female"}))
+			Expect(strings.Join(split[1:], ", ")).To(BeElementOf(data.Appearances))
 		})
 
 		It("should have a personality", func() {
-			mannerism := getValues(data.Mannerism)
-			Expect(npc.Mannerism).To(BeElementOf(mannerism))
+			Expect(npc.Mannerism).To(BeElementOf(data.Mannerism))
 		})
 
 		It("should have a bond", func() {
