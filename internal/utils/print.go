@@ -6,11 +6,10 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-func PrettyPrint(obj interface{}) {
+func PrettyFormat(obj interface{}) (string, error) {
 	b, err := yaml.Marshal(obj)
 	if err != nil {
-		fmt.Printf("unable to prettyprint: %s\n", err)
+		return "", fmt.Errorf("unable to format: %s", err)
 	}
-
-	fmt.Println(string(b))
+	return string(b), nil
 }

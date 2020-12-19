@@ -1,20 +1,22 @@
 package cmd
 
 import (
+	"io"
+
 	"github.com/dank2/rpggen/rpggen/cmd/dnd"
 	"github.com/spf13/cobra"
 )
 
-var dndCommand = &cobra.Command{
-	Use:   "dnd",
-	Short: "The dnd subpackage.",
-	RunE: func(cmd *cobra.Command, args []string) error {
-		return cmd.Help()
-	},
-}
+func AddDndCommand(out, err io.Writer) *cobra.Command {
+	dndCommand := &cobra.Command{
+		Use:   "dnd",
+		Short: "The dnd subpackage.",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return cmd.Help()
+		},
+	}
 
-func init() {
-	dndCommand.AddCommand(dnd.AddNpcCommand())
+	dndCommand.AddCommand(dnd.AddNpcCommand(out))
 
-	rootCmd.AddCommand(dndCommand)
+	return dndCommand
 }

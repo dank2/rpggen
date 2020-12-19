@@ -1,26 +1,21 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
+	"io"
 
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "rpggen",
-	Short: "rpggen is a tool to generate resources for ttrpgs",
-	Long:  ``,
-	RunE: func(cmd *cobra.Command, ars []string) error {
-		return cmd.Help()
-	},
-}
-
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		fmt.Fprintln(os.Stderr, err)
-		os.Exit(1)
+func NewRootCommand(out, err io.Writer) *cobra.Command {
+	rootCmd := &cobra.Command{
+		Use:   "rpggen",
+		Short: "rpggen is a tool to generate resources for ttrpgs",
+		Long:  ``,
+		RunE: func(cmd *cobra.Command, ars []string) error {
+			return cmd.Help()
+		},
 	}
-}
 
-func init() {}
+	rootCmd.AddCommand(AddDndCommand(out, err))
+	return rootCmd
+}
