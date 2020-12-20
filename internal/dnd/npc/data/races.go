@@ -7,14 +7,14 @@ import (
 type RacesType []RaceDist
 
 var Races RacesType = []RaceDist{
-	{"Human", 0.8},
-	{"Dwarf", 0.05},
-	{"Halfling", 0.05},
-	{"Gnome", 0.02},
-	{"Half-elf", 0.02},
-	{"Elf", 0.02},
-	{"Dragonborn", 0.02},
-	{"Half-orc", 0.02},
+	{"Human", 0.5},
+	{"Dwarf", 0.1},
+	{"Halfling", 0.1},
+	{"Gnome", 0.06},
+	{"Half-elf", 0.06},
+	{"Elf", 0.06},
+	{"Dragonborn", 0.06},
+	{"Half-orc", 0.06},
 }
 
 type RaceDist struct {
