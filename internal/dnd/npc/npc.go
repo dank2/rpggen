@@ -23,7 +23,7 @@ func GenerateNpc() (*Npc, error) {
 
 	gender := data.GetGender()
 	race := data.GetRace()
-	name := data.GetName(gender)
+	name := data.GetName(gender, race)
 	appearance := data.GetAppearance()
 	mannerism := data.GetMannerism()
 	bond := data.GetBond()
